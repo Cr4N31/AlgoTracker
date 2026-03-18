@@ -11,24 +11,37 @@ function FormInput(){
     const [inputValue, setInputValue] = useState("");
     const [searchTarget, setSearchTarget] = useState("");
     const [searchResult, setSearchResult] = useState(null);
+    const [error, setError] = useState("");
+    const [isSorted, setIsSorted] = useState("false")
 
     function handleAdd(){
         if(!inputValue) return
         const value = dataType === "number" ? Number(inputValue) : inputValue
         setArrayData([...arrayData, value])
         setInputValue("")
+        setIsSorted(false)
     }
 
     function handleSort(type){
         const copy = [...arrayData]
         if(type === "selection") setArrayData(selectionSort(copy))
         if(type === "insertion") setArrayData(insertionSort(copy))
+        setIsSorted(true)
+    }
+
+    function clearArray(){
+        if (arrayData >= [","]){
+            return setArrayData([])
+        } else {
+            return setError("Array field is already empty") 
+        }
     }
 
     function handleSearch(type){
         const target = dataType === "number" ? Number(searchTarget) : searchTarget
         if(type === "linear") setSearchResult(linearSearch(arrayData, target))
         if(type === "binary") setSearchResult(binarySearch(arrayData, target))
+        
     }
 
     return(
@@ -74,6 +87,8 @@ function FormInput(){
 
             <div>
                 <p>Data: {arrayData.join(", ")}</p>
+                {error && <p>{error}</p>}
+                <button onClick={clearArray}>Clear Array</button>
             </div>
 
             <div>
@@ -85,6 +100,7 @@ function FormInput(){
                         setSearchTarget={setSearchTarget}
                         searchResult={searchResult}
                         handleSearch={handleSearch}
+                        isSorted={isSorted}
                     />
                 ) : (
                     <SortPanel

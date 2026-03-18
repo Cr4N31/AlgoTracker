@@ -1,8 +1,6 @@
-let arrayData = [];
-
 //SORT
-
-export function selectionSort(arr){
+//const capitalized = arr.map(arr => arr.charAt(0).toUpperCase() + arr.slice(1))
+;export function selectionSort(arr){
     for(let i = 0; i < arr.length; i++){
         let lowestIndexNumber = i;
         for(let j = i + 1; j < arr.length; j++){

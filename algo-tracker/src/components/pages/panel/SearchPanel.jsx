@@ -1,4 +1,4 @@
-function SearchPanel({dataType, arrayData, searchTarget, setSearchTarget, searchResult, handleSearch}) {
+function SearchPanel({dataType, arrayData, searchTarget, setSearchTarget, searchResult, handleSearch, isSorted, error}) {
     return(
         <div>
             <div>
@@ -10,9 +10,10 @@ function SearchPanel({dataType, arrayData, searchTarget, setSearchTarget, search
                 />
                 <div>
                     <button onClick={() => handleSearch("linear")}>Linear Search</button>
-                    <button onClick={() => handleSearch("binary")}>Binary Search</button>
+                    <button onClick={() => handleSearch("binary")} disabled={!isSorted}>Binary Search</button>
                 </div>
-            {searchResult !== null && (
+           {error && <p>{error}</p>}
+            {searchResult !== null && !error && (
                 <p>{searchResult === -1 ? "Not found" : `Found at index ${searchResult}`}</p>
             )}
             </div>
