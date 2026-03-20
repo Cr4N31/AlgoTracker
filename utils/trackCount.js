@@ -1,58 +1,107 @@
-//SORT
-//const capitalized = arr.map(arr => arr.charAt(0).toUpperCase() + arr.slice(1))
-;export function selectionSort(arr){
-    for(let i = 0; i < arr.length; i++){
-        let lowestIndexNumber = i;
-        for(let j = i + 1; j < arr.length; j++){
-            if(arr[j] < arr[lowestIndexNumber]){
-                lowestIndexNumber = j;
+// SORT STEPS
+
+export function selectionSortSteps(arr){
+    const steps = []
+    const copy = [...arr]
+
+    for(let i = 0; i < copy.length; i++){
+        let lowestIndexNumber = i
+
+        for(let j = i + 1; j < copy.length; j++){
+            if(copy[j] < copy[lowestIndexNumber]){
+                lowestIndexNumber = j
             }
         }
+
         if(lowestIndexNumber !== i){
-            let temp = arr[i];
-            arr[i] = arr[lowestIndexNumber];
-            arr[lowestIndexNumber] = temp;
+            let temp = copy[i]
+            copy[i] = copy[lowestIndexNumber]
+            copy[lowestIndexNumber] = temp
         }
+
+        steps.push({
+            array: [...copy],
+            sortedUpTo: i,
+            swappedIndex: lowestIndexNumber
+        })
     }
-    return arr;
+
+    return steps
 }
 
-export function insertionSort(arr){
-    for(let i = 1; i < arr.length; i++){
-        let temp = arr[i];
-        let j;
-        for(j = i - 1; j >= 0 && arr[j] > temp; j--){
-            arr[j + 1] = arr[j];
+export function insertionSortSteps(arr){
+    const steps = []
+    const copy = [...arr]
+
+    for(let i = 1; i < copy.length; i++){
+        let temp = copy[i]
+        let j
+        for(j = i - 1; j >= 0 && copy[j] > temp; j--){
+            copy[j + 1] = copy[j]
         }
-        arr[j + 1] = temp;
+        copy[j + 1] = temp
+
+        steps.push({
+            array: [...copy],
+            sortedUpTo: i,
+            insertedAt: j + 1
+        })
     }
-    return arr;
+
+    return steps
 }
 
-//SEARCH 
+// SEARCH STEPS
 
-export function linearSearch(arr, target){
+export function linearSearchSteps(arr, target){
+    const steps = []
+
     for(let i = 0; i < arr.length; i++){
-        if(arr[i] === target){
-            return i;
-        }
+        const found = arr[i] === target
+
+        steps.push({
+            array: [...arr],
+            checking: i,
+            found: found,
+            result: found ? i : -1
+        })
+
+        if(found) return steps
     }
-    return -1;
+
+    // target not found — mark final step
+    steps[steps.length - 1].result = -1
+    return steps
 }
 
-export function binarySearch(arr, target) {
-    let left = 0;
-    let right = arr.length - 1;
-        
+export function binarySearchSteps(arr, target){
+    const steps = []
+    let left = 0
+    let right = arr.length - 1
+
     while(left <= right){
-        let middle = Math.floor((left + right) / 2);
-        if(arr[middle] === target){
-            return middle;
-        } else if(arr[middle] < target){
-            left = middle + 1;
+        let middle = Math.floor((left + right) / 2)
+        const found = arr[middle] === target
+
+        steps.push({
+            array: [...arr],
+            left,
+            middle,
+            right,
+            found: found,
+            result: found ? middle : -1
+        })
+
+        if(found) return steps
+
+        if(arr[middle] < target){
+            left = middle + 1
         } else {
-            right = middle - 1;
+            right = middle - 1
         }
     }
-    return -1;
+
+    // target not found — mark final step
+    steps[steps.length - 1].result = -1
+    return steps
 }
