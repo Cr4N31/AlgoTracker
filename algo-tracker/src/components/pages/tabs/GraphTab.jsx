@@ -59,7 +59,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
                 )}
 
                 <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={sortData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                    <LineChart data={sortData} margin={{ top: 5, right: 20, left: 0, bottom: 25 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0"/>
                         <XAxis
                             dataKey="n"
