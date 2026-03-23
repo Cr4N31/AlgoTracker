@@ -5,9 +5,9 @@ function SearchTab({ dataType, arrayData, searchTarget, setSearchTarget, searchS
     const glassCardStyle = { boxShadow: "0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)" }
 
     return(
-        <div className="flex flex-col items-center text-center gap-6">
+        <div className="flex flex-col items-center text-center gap-6" data-aos="fade-up">
 
-            <div className={glassCard} style={glassCardStyle}>
+            <div className={glassCard} style={glassCardStyle} >
                 <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-4">
                     {isSorted ? "Sorted Array" : "Unsorted Array"}
                 </p>

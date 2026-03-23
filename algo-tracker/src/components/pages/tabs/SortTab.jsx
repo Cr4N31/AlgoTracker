@@ -5,7 +5,7 @@ function SortTab({ originalData, arrayData, lastSortUsed, sortSteps, sortCurrent
     const glassCardStyle = { boxShadow: "0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)" }
 
     return(
-        <div className="flex flex-col items-center text-center gap-6">
+        <div className="flex flex-col items-center text-center gap-6" data-aos="fade-up">
 
             <div className={glassCard} style={glassCardStyle}>
                 <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-4">Original Data</p>
@@ -42,7 +42,7 @@ function SortTab({ originalData, arrayData, lastSortUsed, sortSteps, sortCurrent
 
             {isSorted && sortSteps.length > 0 && (
                 <>
-                    <div className={glassCard} style={glassCardStyle}>
+                    <div className={glassCard} style={glassCardStyle} >
                         <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-4">Result</p>
                         <div className="flex flex-wrap gap-2 justify-center mb-4">
                             {sortSteps[sortSteps.length - 1].array.map((value, index) => (

@@ -38,7 +38,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
         <div className="flex flex-col items-center text-center gap-6">
 
             {/* Sort Graph */}
-            <div className={cardClass}>
+            <div className={cardClass} data-aos="fade-up">
                 <p className={labelClass}>Sort Complexity</p>
                 <p className="text-xs text-gray-400 mb-6">
                     Selection Sort runs at <span className="font-bold text-[#274156]">O(n²)</span> — Insertion Sort runs faster in practice at <span className="font-bold text-[#605856]">O(n(n-1)/2)</span>

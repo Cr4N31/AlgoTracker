@@ -157,6 +157,7 @@ function FormInput(){
 return(
     <section className={cardClass}
         style={{ background: "transparent" }}
+        data-aos="fade-up"
     >
         {/* Background blobs using your colors */}
         <div className="absolute top-10 left-10 w-80 h-80 bg-[#274156] rounded-full opacity-40 blur-3xl pointer-events-none"/>

@@ -4,11 +4,11 @@ function DataTab({ dataType, setDataType, inputValue, setInputValue, originalDat
     const glassCardStyle = { boxShadow: "0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)" }
 
     return(
-        <div className="flex flex-col items-center text-center gap-6">
+        <div className="flex flex-col items-center text-center gap-6" data-aos="fade-up">
 
             <div className={glassCard} style={glassCardStyle}>
                 <h2 className="text-white text-2xl font-bold mb-6">Choose Data Type</h2>
-                <div className="flex gap-6 justify-center">
+                <div className="flex gap-6 justify-center" >
                     {["number", "text"].map((type) => (
                         <div key={type} className="flex items-center gap-2 cursor-pointer" onClick={() => setDataType(type)}>
                             <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200
