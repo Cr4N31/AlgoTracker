@@ -31,7 +31,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
     const sortData = generateSortPoints(Math.max(n * 2, 20))
     const searchData = generateSearchPoints(Math.max(n * 2, 20))
 
-    const cardClass = "w-full bg-white rounded-2xl shadow-sm p-6"
+    const cardClass = "w-full bg-[#00000] rounded-2xl shadow-sm p-6"
     const labelClass = "text-sm text-gray-400 mb-3 font-medium uppercase tracking-widest"
 
     return(
@@ -79,7 +79,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
                         <Line
                             type="monotone"
                             dataKey="Selection Sort"
-                            stroke="#274156"
+                            stroke="#7eb8d4"
                             strokeWidth={2}
                             dot={false}
                             activeDot={{ r: 4 }}
@@ -87,7 +87,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
                         <Line
                             type="monotone"
                             dataKey="Insertion Sort"
-                            stroke="#605856"
+                            stroke="#c4a59e"
                             strokeWidth={2}
                             dot={false}
                             activeDot={{ r: 4 }}
@@ -149,7 +149,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
                         <Line
                             type="monotone"
                             dataKey="Linear Search"
-                            stroke="#605856"
+                            stroke="#c4a59e"
                             strokeWidth={2}
                             dot={false}
                             activeDot={{ r: 4 }}
@@ -157,7 +157,7 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
                         <Line
                             type="monotone"
                             dataKey="Binary Search"
-                            stroke="#274156"
+                            stroke="#7eb8d4"
                             strokeWidth={2}
                             dot={false}
                             activeDot={{ r: 4 }}

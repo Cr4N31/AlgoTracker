@@ -151,16 +151,29 @@ function FormInput(){
         }
     }
 
-    return(
-        <section className="min-h-screen bg-[#F5F3F2] flex flex-col items-center pt-12 px-4">
+    
+    const cardClass = "bg-white rounded-2xl shadow-sm min-h-screen flex flex-col items-center pt-12 px-4 relative overflow-hidden"
+
+return(
+    <section className={cardClass}
+        style={{ background: "transparent" }}
+    >
+        {/* Background blobs using your colors */}
+        <div className="absolute top-10 left-10 w-80 h-80 bg-[#274156] rounded-full opacity-40 blur-3xl pointer-events-none"/>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-[#605856] rounded-full opacity-30 blur-3xl pointer-events-none"/>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-[#274156] rounded-full opacity-25 blur-3xl pointer-events-none"/>
+        <div className="absolute bottom-40 right-20 w-64 h-64 bg-[#605856] rounded-full opacity-20 blur-3xl pointer-events-none"/>
+
+        <div className="relative z-10 w-full flex flex-col items-center">
             <TabNav activeTab={activeTab} setActiveTab={setActiveTab} />
-            <div className="mt-8 w-full max-w-2xl">
+            <div className="mt-8 w-full max-w-2xl pb-12">
                 {activeTab === "data" && <DataTab {...tabProps.data} />}
                 {activeTab === "sort" && <SortTab {...tabProps.sort} />}
                 {activeTab === "search" && <SearchTab {...tabProps.search} />}
                 {activeTab === "graph" && <GraphTab {...tabProps.graph} />}
             </div>
-        </section>
-    )
+        </div>
+    </section>
+)
 }
 export default FormInput
