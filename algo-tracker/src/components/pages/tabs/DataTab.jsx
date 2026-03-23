@@ -23,7 +23,7 @@ function DataTab({ dataType, setDataType, inputValue, setInputValue, originalDat
             </div>
 
             {dataType && (
-                <div className="flex w-full">
+                <div className="flex w-full" data-aos="fade-up">
                     <input
                         className="flex-1 backdrop-blur-md bg-white/10 border border-white/15 border-r-0 p-3 px-5 rounded-l-full text-white placeholder:text-white/30 focus:outline-none focus:bg-white/15 transition-all duration-200"
                         type={dataType}
@@ -44,7 +44,7 @@ function DataTab({ dataType, setDataType, inputValue, setInputValue, originalDat
             {error && <p className="text-rose-300 text-sm font-medium">{error}</p>}
 
             {originalData.length > 0 && (
-                <div className={glassCard} style={glassCardStyle}>
+                <div className={glassCard} style={glassCardStyle} data-aos="fade-up">
                     <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-4">Collected Data</p>
                     <div className="flex flex-wrap gap-2 justify-center">
                         {originalData.map((value, index) => (

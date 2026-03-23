@@ -42,7 +42,7 @@ function SortTab({ originalData, arrayData, lastSortUsed, sortSteps, sortCurrent
 
             {isSorted && sortSteps.length > 0 && (
                 <>
-                    <div className={glassCard} style={glassCardStyle} >
+                    <div className={glassCard} style={glassCardStyle} data-aos="fade-up">
                         <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-4">Result</p>
                         <div className="flex flex-wrap gap-2 justify-center mb-4">
                             {sortSteps[sortSteps.length - 1].array.map((value, index) => (

@@ -30,7 +30,7 @@ function SearchTab({ dataType, arrayData, searchTarget, setSearchTarget, searchS
             </div>
 
             {arrayData.length > 0 && (
-                <div className="flex w-full">
+                <div className="flex w-full" data-aos="fade-up">
                     <input
                         className="flex-1 backdrop-blur-md bg-white/10 border border-white/15 border-r-0 p-3 px-5 rounded-l-full text-white placeholder:text-white/30 focus:outline-none focus:bg-white/15 transition-all duration-200"
                         type={dataType}
@@ -61,7 +61,7 @@ function SearchTab({ dataType, arrayData, searchTarget, setSearchTarget, searchS
 
             {searchResult !== null && searchSteps.length > 0 && (
                 <>
-                    <div className={glassCard} style={glassCardStyle}>
+                    <div className={glassCard} style={glassCardStyle} >
                         <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-3">Result</p>
                         <p className={`text-xl font-bold mb-4 ${searchResult === -1 ? "text-rose-300" : "text-emerald-300"}`}>
                             {searchResult === -1 ? "Not Found" : `Found at index ${searchResult}`}
