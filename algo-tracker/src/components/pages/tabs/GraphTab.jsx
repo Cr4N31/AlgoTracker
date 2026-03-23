@@ -41,19 +41,19 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
             <div className={cardClass} data-aos="fade-up">
                 <p className={labelClass}>Sort Complexity</p>
                 <p className="text-xs text-gray-400 mb-6">
-                    Selection Sort runs at <span className="font-bold text-[#274156]">O(n²)</span> — Insertion Sort runs faster in practice at <span className="font-bold text-[#605856]">O(n(n-1)/2)</span>
+                    Selection Sort runs at <span className="font-bold text-gray-900">O(n²)</span> — Insertion Sort runs faster in practice at <span className="font-bold text-gray-900">O(n(n-1)/2)</span>
                 </p>
 
                 {lastSortUsed && (
                     <div className="flex justify-center gap-6 text-sm mb-6">
                         <p className="text-gray-400">
-                            Last Used: <span className="text-[#274156] font-bold capitalize">{lastSortUsed} Sort</span>
+                            Last Used: <span className="text-gray-800 font-bold capitalize">{lastSortUsed} Sort</span>
                         </p>
                         <p className="text-gray-400">
-                            Time Taken: <span className="text-[#274156] font-bold">{sortTime}ms</span>
+                            Time Taken: <span className="text-gray-800 font-bold">{sortTime}ms</span>
                         </p>
                         <p className="text-gray-400">
-                            Data Size: <span className="text-[#274156] font-bold">{n}</span>
+                            Data Size: <span className="text-gray-800 font-bold">{n}</span>
                         </p>
                     </div>
                 )}
@@ -111,19 +111,19 @@ function GraphTab({ originalData, lastSortUsed, lastSearchUsed, sortTime, search
             <div className={cardClass}>
                 <p className={labelClass}>Search Complexity</p>
                 <p className="text-xs text-gray-400 mb-6">
-                    Linear Search runs at <span className="font-bold text-[#605856]">O(n)</span> — Binary Search runs at <span className="font-bold text-[#274156]">O(log n)</span>
+                    Linear Search runs at <span className="font-bold text-gray-900">O(n)</span> — Binary Search runs at <span className="font-bold text-gray-900">O(log n)</span>
                 </p>
 
                 {lastSearchUsed && (
                     <div className="flex justify-center gap-6 text-sm mb-6">
                         <p className="text-gray-400">
-                            Last Used: <span className="text-[#274156] font-bold capitalize">{lastSearchUsed} Search</span>
+                            Last Used: <span className="text-gray-800 font-bold capitalize">{lastSearchUsed} Search</span>
                         </p>
                         <p className="text-gray-400">
-                            Time Taken: <span className="text-[#274156] font-bold">{searchTime}ms</span>
+                            Time Taken: <span className="text-gray-800 font-bold">{searchTime}ms</span>
                         </p>
                         <p className="text-gray-400">
-                            Data Size: <span className="text-[#274156] font-bold">{n}</span>
+                            Data Size: <span className="text-gray-800 font-bold">{n}</span>
                         </p>
                     </div>
                 )}
